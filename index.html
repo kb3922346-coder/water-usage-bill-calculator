@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Water Usage & Bill Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <section class="calculator">
+      <div class="water-icon" aria-hidden="true">💧</div>
+      <p class="eyebrow">SMART WATER MANAGEMENT</p>
+      <h1>Water Usage &amp; Bill Calculator</h1>
+      <p class="intro">Enter your meter readings to calculate water consumption and your estimated bill.</p>
+
+      <form id="billForm">
+        <label for="previous">Previous meter reading <span>(units)</span></label>
+        <input type="number" id="previous" min="0" step="any" placeholder="e.g. 120" required>
+
+        <label for="current">Current meter reading <span>(units)</span></label>
+        <input type="number" id="current" min="0" step="any" placeholder="e.g. 145" required>
+
+        <button type="submit" id="calculateBtn">Calculate my bill</button>
+        <button type="button" class="reset-btn" id="resetBtn">Reset</button>
+      </form>
+
+      <p id="error" class="error" role="alert"></p>
+
+      <section id="result" class="result" aria-live="polite" hidden>
+        <h2>Bill summary</h2>
+        <div class="summary-row"><span>Previous reading</span><strong id="oldValue">—</strong></div>
+        <div class="summary-row"><span>Current reading</span><strong id="newValue">—</strong></div>
+        <div class="summary-row"><span>Water consumed</span><strong id="unitsValue">—</strong></div>
+        <div class="total">
+          <span>Estimated water bill</span>
+          <strong id="billValue">₹0.00</strong>
+        </div>
+        <p class="note">Sample tariff: ₹5 for the first 10 units, ₹8 for the next 10 units, and ₹10 for each unit above 20. Actual local rates may differ.</p>
+      </section>
+
+      <footer>Frontend: HTML, CSS &amp; JavaScript | Backend: C</footer>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
